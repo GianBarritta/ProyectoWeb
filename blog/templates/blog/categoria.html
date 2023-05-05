@@ -35,9 +35,9 @@
 
           {% for post in posts %}
 
-            {% for categoria in post.categorias.all %} &nbsp;&nbsp;&nbsp;
+            {% for categoria in post.categorias.all %}
 
-              {{categoria.nombre}}
+              {{categoria.nombre}} &nbsp;&nbsp;&nbsp;
 
             {% endfor %}
 
