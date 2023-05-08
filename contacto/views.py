@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import FormularioContacto
 from django.core.mail import EmailMessage
 
-def  contacto(request):
+def contacto(request):
 
     formulario_contacto = FormularioContacto()
 

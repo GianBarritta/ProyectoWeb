@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from servicios.models import Servicio
 
-def  servicios(request):
+def servicios(request):
 
     servicios = Servicio.objects.all()
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from blog.models import Post, Categoria
 
-def  blog(request):
+def blog(request):
 
     posts = Post.objects.all()
 
