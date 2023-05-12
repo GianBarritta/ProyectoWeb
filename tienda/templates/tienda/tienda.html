@@ -4,7 +4,23 @@
 
 {% block content %}
 
-<div class="row">
+<div class="container">
+
+  <div style="float:right;">       
+
+    {% if request.user.is_authenticated %}
+ 
+      {% include "carro/widget.html" %}
+
+    {% else %} 
+
+      <div class="alert alert-danger text-center">Login para ver Carro</div>     
+
+    {% endif %}
+    
+  </div>
+
+  <div class="row">
 
 {% for producto in productos %}
 
@@ -21,6 +37,12 @@
             <p class="card-text">{{producto.precio}}&nbsp;€</p>
 
         </div> 
+        
+        <div class="card-footer text-center">
+
+            <a href="{% url 'carro:agregar' producto.id %}" class="btn btn-success">Agregar al carro</a>
+
+        </div>
 
     </div><!--card que se cierra-->
     
