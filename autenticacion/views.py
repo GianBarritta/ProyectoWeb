@@ -44,9 +44,9 @@ def logear(request):
                 login(request, usuario)
                 return redirect('Home')
             else:
-                messages.error(request, "usuario no válido")
+                messages.error(request, "Usuario no válido")
         else:
-            messages.error(request, "información incorrecta")
+            messages.error(request, "Información incorrecta")
 
     form = AuthenticationForm()
     return render(request,"login/login.html",{"form":form})
