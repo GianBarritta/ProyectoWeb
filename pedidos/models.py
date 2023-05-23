@@ -1,15 +1,15 @@
 from tabnanny import verbose
 from django.db import models
 
-from django.contrib.auth import get_user_model # devuelve el usuario activo actual
-from django.db.models import F,Sum, FloatField  # para calcular el total de una orden de pedido
+from django.contrib.auth import get_user_model #devuelve el usuario activo actual
+from django.db.models import F,Sum, FloatField  #para calcular el total de una orden de pedido
 from tienda.models import Producto
 
 User = get_user_model()
 
 class Pedido(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE) # Cuando se elimine un usuario sus pedidos se eliminirán en cascada
-    created_at = models.DateTimeField(auto_now_add=True)   # Para le fecha de pedido automática
+    user = models.ForeignKey(User, on_delete=models.CASCADE) #Cuando se elimine un usuario sus pedidos se eliminirán en cascada
+    created_at = models.DateTimeField(auto_now_add=True)   #Para le fecha de pedido automática
 
     @property
     def total(self):
