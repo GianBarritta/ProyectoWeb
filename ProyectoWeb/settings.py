@@ -62,7 +62,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'carros.context_processors.importe_total_carro'
+                'carro.context_processor.importe_total_carro'
             ],
         },
     },
