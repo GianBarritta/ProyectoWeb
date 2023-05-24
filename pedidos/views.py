@@ -27,7 +27,7 @@ def procesar_pedido(request):
             cantidad = value['cantidad'],
             user = request.user,
             pedido = pedido        
-                     
+
             ))
 
     LineaPedido.objects.bulk_create(lineas_pedido) #crea registros en BBDD en paquete
@@ -57,9 +57,9 @@ def enviar_mail(**kwargs):
                        
         })
 
-    mensaje_texto=strip_tags(mensaje)
+    mensaje_texto = strip_tags(mensaje)
     from_email = "gianbarritta@gmail.com"
     #to=kwargs.get("email_usuario")
-    to="aquí la dirección del destinatario"
+    to = "aquí la dirección del destinatario"
     send_mail(asunto,mensaje_texto,from_email,[to], html_message=mensaje)
     
